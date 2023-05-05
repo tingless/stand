@@ -1,6 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import HomeView from "../views/HomeView.vue";
+import ExtendInputEditor from "../views/ExtendInputEditor.vue";
 
 Vue.use(VueRouter);
 
@@ -9,15 +10,12 @@ const routes = [
     path: "/",
     name: "home",
     component: HomeView,
-  },
-  {
-    path: "/about",
-    name: "about",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/AboutView.vue"),
+    children:[
+      {
+        path: 'extend',
+        component: ExtendInputEditor
+      },
+    ]
   },
 ];
 
@@ -26,5 +24,11 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes,
 });
+
+// 解决重复路由报错的提示
+const VueRouterPush = VueRouter.prototype.push
+VueRouter.prototype.push = function(to){
+  return VueRouterPush.call(this, to).catch(err=> err)
+}
 
 export default router;
