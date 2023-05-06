@@ -10,12 +10,12 @@ const routes = [
     path: "/",
     name: "home",
     component: HomeView,
-    children:[
+    children: [
       {
-        path: 'extend',
-        component: ExtendInputEditor
+        path: "extend",
+        component: ExtendInputEditor,
       },
-    ]
+    ],
   },
 ];
 
@@ -26,9 +26,9 @@ const router = new VueRouter({
 });
 
 // 解决重复路由报错的提示
-const VueRouterPush = VueRouter.prototype.push
-VueRouter.prototype.push = function(to){
-  return VueRouterPush.call(this, to).catch(err=> err)
-}
+const VueRouterPush = VueRouter.prototype.push;
+VueRouter.prototype.push = function (to) {
+  return VueRouterPush.call(this, to).catch((err) => err);
+};
 
 export default router;
