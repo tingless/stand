@@ -8,14 +8,12 @@
 //     console.log(value, key, obj);
 // })
 
-function forEachValue(obj, cb){
-    Object.keys(obj).forEach((key, index)=>{
-        cb(obj[key], key, obj)
-    })
+function forEachValue(obj, cb) {
+  Object.keys(obj).forEach((key, index) => {
+    cb(obj[key], key, obj);
+  });
 }
-
-
 
 export default {
-    forEachValue
-}
+  forEachValue,
+};

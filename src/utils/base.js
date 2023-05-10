@@ -39,7 +39,7 @@ console.log(arr1.find((item) => item.name === "1"));
 // slice 数组的分割 返回一个新数组 不会改变原数组 [start,end) 下标
 console.log("------ slice");
 console.log(arr.slice(2));
-console.log(arr.slice(1,4));
+console.log(arr.slice(1, 4));
 
 // forEach用来处理不需要返回值的，并且每次循环可以有return，跳出单次循环
 // for最基础的循环，可以break，可以被some替代了

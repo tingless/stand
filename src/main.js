@@ -10,6 +10,8 @@ import "./components/extend-loading/index";
 
 // 基本数组的用法
 // import "./utils/base";
+// 对数组的一些高级处理方法
+// import "./utils/advancedArray";
 // 对象的一些高级处理方法
 // import "./utils/advancedObject.js";
 
