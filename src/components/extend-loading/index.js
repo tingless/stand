@@ -9,7 +9,6 @@ const Dialog = Vue.extend(dialog);
 
 // 创建实例并且挂载到一个div上
 const app = new Dialog().$mount();
-console.log("freeGiftTips", app.$el);
 // 打开弹框函数
 function showDialog(options) {
   // 初始化调用传递过来的参数赋值更改组件内内部值
